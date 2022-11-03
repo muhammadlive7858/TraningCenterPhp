@@ -40,6 +40,38 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="training_name" class="col-md-4 col-form-label text-md-end">{{ __('Training center name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="training_name" type="text" class="form-control @error('text') is-invalid @enderror" name="training_center_name" value="{{ old('training_center_name') }}" required autocomplete="text">
+
+                                @error('training_center_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="role" id="" class="form-control">
+                                    <option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                </select>
+
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
