@@ -25,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         // dd(Auth::user());
-        return view('dashboard');
+        if(Auth::user())
+        return view('user.userpage');
     }
 }
