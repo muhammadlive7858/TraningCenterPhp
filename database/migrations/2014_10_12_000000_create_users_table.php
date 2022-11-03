@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('traning_image')->nullable();
             $table->rememberToken();
             $table->boolean('role');
-
             $table->integer('role_id')->nullable();
             $table->timestamps();
         });
