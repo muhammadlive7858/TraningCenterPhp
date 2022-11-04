@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('training_center_name')->nullable();
             $table->string('traning_image')->nullable();
             $table->rememberToken();
-            $table->string('role');
+            $table->string('role')->default('');
             $table->integer('role_id')->nullable();
             $table->timestamps();
         });

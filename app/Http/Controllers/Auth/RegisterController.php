@@ -56,7 +56,9 @@ class RegisterController extends Controller
             'phone' => ['required'],
             'training_center_name' => ['required'],
             'role' => ['required'],
+            'role_id'=>['nullable']
         ]);
+
     }
 
     /**
@@ -74,6 +76,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'training_center_name' => $data['training_center_name'],
             'role' => $data['role']
-            ]);
+        ]);
+        dd($data);
     }
 }
