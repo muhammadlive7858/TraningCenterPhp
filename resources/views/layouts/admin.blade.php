@@ -425,8 +425,13 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <form action="{{ route('logout') }}" method="post" class="form-control  d-flex align-center justify-content-center">
+
+                                                    {{-- <input type="submit" value="submit"> --}}
+                                                    <button>
+                                                        <i class="zmdi zmdi-power"></i>Logout
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
