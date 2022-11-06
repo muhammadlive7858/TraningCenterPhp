@@ -77,6 +77,6 @@ class RegisterController extends Controller
             'training_center_name' => $data['training_center_name'],
             'role' => $data['role']
         ]);
-        dd($data);
+        // dd($data);
     }
 }

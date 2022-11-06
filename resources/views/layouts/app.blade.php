@@ -76,7 +76,7 @@
 
                         {{-- Mentors  --}}
                         <li>
-                            <a href="javaScript:void();">
+                            <a href="{{route('mentor.index')}}">
                                 <img src="assets/images/svg-icon/basic.svg" class="img-fluid" alt="basic"><span>Mentors</span>
                             </a>
                         </li>
@@ -330,7 +330,16 @@
                                                             <a href="index.html#" class="profile-icon"><img src="assets/images/svg-icon/email.svg" class="img-fluid" alt="email">Email</a>
                                                         </li>
                                                         <li class="media dropdown-item">
-                                                            <a href="index.html#" class="profile-icon"><img src="assets/images/svg-icon/logout.svg" class="img-fluid" alt="logout">Logout</a>
+                                                            {{-- <a href="index.html#" class="profile-icon"><img src="assets/images/svg-icon/logout.svg" class="img-fluid" alt="logout">Logout</a> --}}
+                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                                        document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}
+                                                        </a>
+
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
                                                         </li>
                                                     </ul>
                                                 </div>

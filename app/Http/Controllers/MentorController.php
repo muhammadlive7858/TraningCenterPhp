@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\mentor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MentorController extends Controller
 {
@@ -14,7 +15,9 @@ class MentorController extends Controller
      */
     public function index()
     {
-        //
+        $user_id = Auth::user();
+        $mentors = mentor::where('user_id' , $user_id)->get();
+        return view('mentors.index' , compact('mentors'));
     }
 
     /**
@@ -24,7 +27,7 @@ class MentorController extends Controller
      */
     public function create()
     {
-        //
+        return view('mentor.create');
     }
 
     /**
@@ -35,7 +38,7 @@ class MentorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

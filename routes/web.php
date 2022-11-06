@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/mentor/index' , [App\Http\Controllers\MentorController::class , 'index'])->name('mentor.index');

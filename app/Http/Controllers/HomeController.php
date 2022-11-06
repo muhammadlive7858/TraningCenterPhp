@@ -24,8 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // dd(Auth::user());
-        if(Auth::user())
-        return view('user.userpage');
+        $user = Auth::user();
+        if ($user->role == 'mentor') {
+            return view('dashboard');
+        } if ($user->role == 'student') {
+            return view('userdashboard');
+        }
+
+
     }
 }
